@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [ "examples/*", "iterum", "iterum_macros"]
+
+[workspace.package]
+license = "MIT OR Apache-2.0"
+authors = ["Matthew Polak <contact@matteopolak.com>"]
+repository = "https://github.com/matteopolak/iterum"
+
+[workspace.lints.clippy]
+pedantic = "warn"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }

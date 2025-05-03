@@ -1,0 +1,13 @@
+[package]
+name = "iterum"
+version = "0.1.0"
+edition = "2024"
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+iterum_macros = { path = "../iterum_macros", version = "0.1.0" }
+
+[dev-dependencies]
+serde.workspace = true

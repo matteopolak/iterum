@@ -1,0 +1,12 @@
+[package]
+name = "example_basic"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+iterum.path = "../../iterum"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lints]
+workspace = true
