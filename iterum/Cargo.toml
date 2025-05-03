@@ -1,6 +1,7 @@
 [package]
 name = "iterum"
 version = "0.1.0"
+description = "A utility macro for supporting multiple versions of a struct."
 edition = "2024"
 license.workspace = true
 authors.workspace = true
