@@ -145,8 +145,7 @@ impl PartialOrd for VersionedField<'_> {
 
 impl Ord for VersionedField<'_> {
 	fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-		self
-			.since
+		self.since
 			.cmp(&other.since)
 			.then_with(|| self.ord.cmp(&other.ord))
 	}
@@ -336,11 +335,12 @@ fn expand_struct(data: ast::Fields<Field>, args: Args, input: Input) -> syn::Res
 				quote! {}
 			};
 
-			let serde_borrow = (args.serde.is_present() && generics.lifetimes().count() > 0).then(|| {
-				quote! {
-					#[serde(borrow)]
-				}
-			});
+			let serde_borrow =
+				(args.serde.is_present() && generics.lifetimes().count() > 0).then(|| {
+					quote! {
+						#[serde(borrow)]
+					}
+				});
 
 			quote! {
 				#serde_rename
